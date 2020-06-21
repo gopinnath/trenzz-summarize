@@ -1,20 +1,23 @@
 package ind.gopinnath.trenzz.bean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Summaries {
 
-	private Summary summaries;
+	private List<HourlySummary> hourlySummaries = new ArrayList<HourlySummary>();
 
-	public Summary getSummaries() {
-		return summaries;
+	public List<HourlySummary> getHourlySummaries() {
+		return hourlySummaries;
 	}
 
-	public void setSummaries(Summary summaries) {
-		this.summaries = summaries;
+	public void setHourlySummaries(List<HourlySummary> hourlySummaries) {
+		this.hourlySummaries = hourlySummaries;
 	}
 
 	@Override
 	public String toString() {
-		return "Summaries [summaries=" + summaries + "]";
+		return "Summaries [hourlySummaries=" + hourlySummaries + "]";
 	}
 	
 }
