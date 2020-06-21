@@ -17,4 +17,5 @@ public class Resource {
     	Summaries summaries = new Summaries();
     	return summaries;
     }
+    
 }
