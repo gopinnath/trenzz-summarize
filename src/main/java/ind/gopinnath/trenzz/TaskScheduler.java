@@ -22,7 +22,7 @@ import io.quarkus.scheduler.Scheduled;
 @ApplicationScoped
 public class TaskScheduler {
 
-	private static final Logger LOGGER = Logger.getLogger(TaskScheduler.class.getName()); 
+    private static final Logger LOGGER = Logger.getLogger(TaskScheduler.class.getName()); 
 	
     @ConfigProperty(name = "twitter.consumerKey")
     private String consumerKey;
@@ -40,7 +40,7 @@ public class TaskScheduler {
     @Inject
     private EntityManager entityManager;
     
-    @Scheduled(every = "60000s")
+    @Scheduled(cron="1 * * * *")
     @Transactional
     public void queryAndCaptureTrend() {
     	AuthToken token = service.authenticate("client_credentials",generateBasicAuthValue());
