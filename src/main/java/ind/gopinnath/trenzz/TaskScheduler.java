@@ -43,7 +43,7 @@ public class TaskScheduler {
     @Inject
     private EntityManager entityManager;
     
-    @Scheduled(cron="0 31 * ? * *")
+    @Scheduled(cron="0 3 * ? * *")
     @Transactional
     public void queryAndCaptureTrend() {
     	AuthToken token = service.authenticate("client_credentials",generateBasicAuthValue());
