@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -17,12 +18,12 @@ import ind.gopinnath.trenzz.bean.HourlySummary;
 import ind.gopinnath.trenzz.bean.Summaries;
 import ind.gopinnath.trenzz.bean.TrendEntity;
 import ind.gopinnath.trenzz.bean.TrendResponse;
+import ind.gopinnath.util.DateUtil;
 
 @ApplicationScoped
 @Path("/api")
 public class Resource {
 	
-
     @Inject
     private EntityManager entityManager;
 
@@ -30,8 +31,8 @@ public class Resource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/trenzz")
     public Summaries summarize() {
-    	@SuppressWarnings("unchecked")
-		List<TrendEntity> trends = entityManager.createQuery("Select t from TrendEntity t").getResultList();
+    	TypedQuery<TrendEntity> query = entityManager.createQuery("Select t from TrendEntity t where t.trendHour > :previousSunday",TrendEntity.class);
+		List<TrendEntity> trends = query.setParameter("previousSunday", DateUtil.getPreviuosSunday()).getResultList();
     	return buildSummaries(trends);
     }
 
