@@ -15,4 +15,5 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         repository: gopinnath/trenzz-summarize
+        tags: trenzz 
         dockerfile: src/main/docker/Dockerfile.mvn
