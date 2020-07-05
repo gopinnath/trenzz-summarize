@@ -43,12 +43,11 @@ public class TaskScheduler {
     @Inject
     private EntityManager entityManager;
     
-    @Scheduled(cron="0 3 * ? * *")
+    @Scheduled(cron = "0 1 * ? * *")
     @Transactional
     public void queryAndCaptureTrend() {
     	AuthToken token = service.authenticate("client_credentials",generateBasicAuthValue());
     	Trends trends = service.fetchTrends(woeid,getBearerHeaderValue(token))[0];
-    	LOGGER.info("Trend Info " + trends);
     	persistTrends(trends);
     }
 
@@ -69,6 +68,7 @@ public class TaskScheduler {
 		for(int i = 0;i < 10;i++)	{
 			entityManager.persist(buildTrendEntity(trends.getTrends()[i],tweetHour,i+1));
 		}
+		LOGGER.info("Trend Info Loaded For Hour " + tweetHour);
 	}
 
     private TrendEntity buildTrendEntity(Trend trend, LocalDateTime tweetHour,Integer trendSequence) {
