@@ -18,5 +18,16 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
+    
     - name: Build with Maven
       run: mvn -B package -Pnative -Dquarkus.native.container-build=true
+    
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v1.1.0
+      with:
+        registry: docker.pkg.github.com
+        username: gopinnath
+        password: ${{ secrets.PASSWORD }}
+        repository: gopinnath/trenzz-summarize/trenzz
+        tags: n1.0
+        dockerfile: src/main/docker/Dockerfile.native
