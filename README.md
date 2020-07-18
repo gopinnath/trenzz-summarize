@@ -43,11 +43,13 @@ mvn compile -Dtwitter.consumerKey=<<Twitter Consumer API Key>> -Dtwitter.secret=
 or you can perform 2 steps.
 
 Step 1 :
+
 ```
 mvn compile
 ```
 
 Stpe 2 :
+
 ```
 java -jar -Dtwitter.consumerKey=<<Twitter Consumer API Key>> -Dtwitter.secret=<<API Secret>> -Dtwitter.woeid=<<WOEID>> target/trenzz-summarize-1.0.0-SNAPSHOT-runner.jar
 ```
