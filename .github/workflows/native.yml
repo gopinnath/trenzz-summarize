@@ -28,6 +28,6 @@ jobs:
         registry: docker.pkg.github.com
         username: gopinnath
         password: ${{ secrets.PASSWORD }}
-        repository: gopinnath/trenzz-summarize/trenzz
-        tags: n1.0
+        repository: gopinnath/trenzz-summarize/trenzz-native
+        tags: v1.0
         dockerfile: src/main/docker/Dockerfile.native
