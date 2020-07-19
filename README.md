@@ -4,7 +4,7 @@
 - [Live Application](#live-application)
 - [Execution Options](#execution-options)
     - [Maven or Java Command](#maven-or-java-command)
-    - [Docker Image](#docker-image)
+    - [Local Docker Image](#local-docker-image)
     - [Heroku Dyno](#heroku-dyno)
 - [Github Actions](#github-actions)
 
