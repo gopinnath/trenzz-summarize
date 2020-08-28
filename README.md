@@ -24,10 +24,6 @@ The application  needs 3 runtime parameters, Twitter Consumer API Key, Secret an
 
 For the Place Id, twitter takes the [WOEID](https://en.wikipedia.org/wiki/WOEID). For example for India, the WOEID is 23424848.
 
-## Live Application
-
-The applicaiton has been deployed on the AWS Fargate and the application is live [here](http://54.227.41.49:8080/).
-
 ## Execution Options
 
 For executing the application it needs 3 environment variables, twitter consumer key, twitter secret and place id. Please refere to [twitter documentation on trends API](https://developer.twitter.com/en/docs/trends/trends-for-location/overview) for more details.
