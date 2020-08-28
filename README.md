@@ -1,7 +1,6 @@
 - [Introduction](#introduction)
 - [About the Usecase](#about-the-usecase)
 - [Twitter API Details](#twitter-api-details)
-- [Live Application](#live-application)
 - [Execution Options](#execution-options)
     - [Maven or Java Command](#maven-or-java-command)
     - [Local Docker Image](#local-docker-image)
